@@ -35,7 +35,7 @@ con.connect(function(err) {
 });
 
 app.get('/', (req, res) => {
-    let query = "SELECT * FROM ARTICLE";
+    let query = "SELECT * FROM article inner join author on article.author_id = author.id";
     let articles = []
     con.query(query, (err, result) => {
         if (err) throw err;
