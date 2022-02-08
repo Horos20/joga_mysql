@@ -12,6 +12,8 @@ app.set('view engine', hbs.engine({
     layoutsDir: __dirname + '/views/layouts/',
 }))
 
+app.use(express.static('public'));
+
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: true}))
 
